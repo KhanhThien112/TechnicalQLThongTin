@@ -1,0 +1,89 @@
+﻿@model TechnicalQLThongTin.Models.EmployeeValidation
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.id)
+    <div class="modal-dialog" id="form">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="ModalTitle"></h5>
+                <a href="#" class="close" data-dismiss="modal">&times;</a>
+            </div>
+            <div class="modal-body">
+
+
+                <fieldset id="SubmitForm">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="small mb-1">Mã nhân viên <span class="text-danger">*</span></label>
+                                @Html.EditorFor(model => model.maNV, new { htmlAttributes = new { @class = "form-control", placeholder = "Mã nhân viên", @id = "MaNV", required = "required" } })
+                                @Html.ValidationMessageFor(model => model.maNV, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="small mb-1">Họ và tên <span class="text-danger">*</span></label>
+                                @Html.EditorFor(model => model.hoTen, new { htmlAttributes = new { @class = "form-control", placeholder = "Họ và tên", @id = "HoTen", required = "required" } })
+                                @Html.ValidationMessageFor(model => model.hoTen, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="small mb-1">Ngày sinh <span class="text-danger">*</span></label>
+                                @Html.EditorFor(model => model.namSinh, new { htmlAttributes = new { @class = "form-control", Type = "date", placeholder = "", @id = "NamSinh", @Value = ViewBag.namSinh, required = "required" } })
+                                @Html.ValidationMessageFor(model => model.namSinh, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="small mb-1">Email</label>
+                                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", Type = "email", placeholder = "Email", @id = "Email" } })
+                                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="small mb-1">Số điện thoại</label>
+                                @Html.EditorFor(model => model.dienThoai, new { htmlAttributes = new { @class = "form-control", placeholder = "Số điện thoại", @id = "DienThoai" } })
+                                @Html.ValidationMessageFor(model => model.dienThoai, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="small mb-1">Địa chỉ</label>
+                                @Html.EditorFor(model => model.diaChi, new { htmlAttributes = new { @class = "form-control", placeholder = "Địa chỉ", @id = "DiaChi" } })
+                                @Html.ValidationMessageFor(model => model.diaChi, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="btn-margin-top text-center">
+                        <input type="submit" value="Xác nhận" class="btn btn-success button_submit" />
+                    </div>
+
+                </fieldset>
+
+
+            </div>
+        </div>
+    </div>
+}
+
+
+<script>
+
+</script>
+
+
